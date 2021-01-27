@@ -11,14 +11,20 @@ def home(request):
 def To_Do(request):
     
     if request.method == "POST":
-        form = ListForm(request.POST or None)
+        try:
+            form = ListForm(request.POST or None)
 
-        if form.is_valid():            
-            form.save()
-            all_items = List.objects.all        
-            messages.success(request, ('Item has been added to the list!'))
-            return render(request, 'To_Do.html', {'all_items': all_items})        
-    
+            if form.is_valid():            
+                form.save()
+                all_items = List.objects.all        
+                messages.success(request, ('Item has been added to the list!'))
+                return render(request, 'To_Do.html', {'all_items': all_items})        
+            else:
+                all_items = List.objects.all  
+                return render(request, 'To_Do.html', {'all_items': all_items})        
+        
+        except ValueError:
+            return redirect('To_Do')     
     else:
         all_items = List.objects.all
         return render(request, 'To_Do.html', {'all_items': all_items})
