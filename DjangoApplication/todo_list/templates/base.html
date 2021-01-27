@@ -24,10 +24,11 @@
         
         <div class = "MainBody">
             <div class = "InnerBody">
-                <h2 style = "font-family: 'pacifico'; float: left; margin-top: 30px; margin-left: 30px; color: darkslategray">Learning Django!</h2>
-                <h3 style = "font-family: Ubuntu; float: left; margin-top: 100px; margin-left: -160px">Welcome to my website!</h3>
-                <img style = "float: right; margin-top: 30px; margin-right: 100px;" src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQG0fBHmdf4VcnjxhZNCU1XazZg4Z5IsGa6g&usqp=CAU">
-
+                <div class = "header">
+                    <h2 style = "font-family: 'pacifico'; float: left; margin-top: 30px; margin-left: 30px; color: darkslategray">Learning Django!</h2>
+                    <h3 style = "font-family: Ubuntu; float: left; margin-top: 100px; margin-left: -160px">Welcome to my website!</h3>
+                    <img style = "float: right; margin-top: 30px; margin-right: 100px;" src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQG0fBHmdf4VcnjxhZNCU1XazZg4Z5IsGa6g&usqp=CAU">
+                </div>
                 {% block content %}
 
                 {% endblock %}
@@ -94,14 +95,13 @@ body {
 
 .MainBody {
     width: 105%;
-    height: 1200px;
+    height: 2000px;
     margin: auto;
     background-color: '#F6F6F6' ;
     margin-top: 75px;
     margin-left: -20px;
     overflow: auto;
     border-bottom-style: solid;
-
 }
 
 .MainBody h2 {
@@ -115,6 +115,12 @@ body {
     margin-left: auto;
     margin-right: auto;
     margin-top: 2%;
+    border-style: solid;
+}
+
+.header {
+    height: 250px;
+    width: 100%;
     border-style: solid;
 }
 

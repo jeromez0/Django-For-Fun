@@ -4,4 +4,89 @@
 
 <h2>To-Do App</h2>
 
+<form method = "POST">
+    {% csrf_token %}
+    <input id = "inp" type = "search" placeholder = "input task" name = "item">
+    <button id = "but" type = "submit">Add Task</button>
+</form>
+
+{% if messages %}
+    {% for message in messages %}
+        <div id = "mess">
+        {{ message }}
+        </div>
+    {% endfor %}
+{% endif %}
+
+
+    {% if all_items %}
+    <table>
+        {% for things in all_items %}
+            {% if things.completed %}
+                <tr class = "completed">
+                    <td>{{ things.item}} </td>
+                    <td><a href = "{% url 'incomplete' things.id %}">Completed</a></td>
+                    <td><a href = "{% url 'delete' things.id %}">Delete</a></td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td>{{ things.item}} </td>
+                    <td><a href = "{% url 'complete' things.id %}">Pending Completion</a></td>
+                    <td><a href = "{% url 'delete' things.id %}">Delete</a></td>
+                </tr>
+            {% endif %}
+        {% endfor %}
+    </table>
+    {% endif %}
+
+
+<style>
+
+#mess {
+    float: right;
+    margin-right: 100px;
+}
+
+#inp {
+    height: 40px;
+    width: 65%;
+    float: left;
+    margin-left: 10%
+}
+
+#but {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 10px;
+    margin-left: 20px;
+    margin-bottom: 10px;
+}
+
+table, td {
+    border: 1px solid black;
+    text-align: center;
+}
+tr {
+    height: 50px;
+}
+
+.completed {
+    background-color: gold;
+}
+
+table {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+</style>
+
 {% endblock %}
