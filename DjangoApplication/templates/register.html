@@ -4,13 +4,18 @@
 
 <h2>Sign Up Page</h2>
 
-<form method = "POST">
+<form method = "POST" action = "{% url 'register' %}">
 
     <div class = "login">
         {% csrf_token %}
-        <input id = "email" type = "text" placeholder = "Enter Username" name="username">
 
-        <input id = "password" type = "password" placeholder = "Enter Password" name = "password">
+        {{ form.as_p }}
+
+        <!-- {% if form.errors %}
+
+            <p>Your form has errors...</p>
+
+        {% endif %} -->
 
         <button id = "but" type = "submit">Sign Up</button>
 
@@ -21,9 +26,17 @@
 <style>
 
 
+.form-control {
+    height: 30px;
+    width: 80%;
+    display: block;
+    margin-top: 30px;
+}
+
+
 .login {
     width: 50%;
-    height: 250px;
+    height: 1000px;
     margin-right: auto;
     margin-left: auto;
     margin-top: 50px;
