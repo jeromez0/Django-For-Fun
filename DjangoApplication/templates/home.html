@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %} 
+
+<h2>Home Page</h2>
+
+{% if user.is_authenticated %}
+
+    <p>Name : {{ user.firstname }} {{ user.lastname }}</p>
+    <p>Username: {{ user.username }}</p>
+    <p>Email: {{ user.email }}</p>
+
+
+{% endif %}
+
+<style>
+p {
+    margin-left: 100px;
+}
+
+</style>
+
+{% endblock %}

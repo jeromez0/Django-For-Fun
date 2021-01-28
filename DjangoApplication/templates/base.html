@@ -5,7 +5,6 @@
         <meta charset = "utf-8">
         <meta name = "viewport" content = "width=device-width">
         <title>Learning Django</title>
-        <link href = "style.css" rel = "stylesheet" type = "text/css"/>
     </head>
 
     <body>
@@ -18,6 +17,12 @@
                     <li><a href = "{% url 'To_Do' %}">To-Do App</a></li>
                     <li><a href = "{% url 'about' %}">About Us</a></li>
                     <li><a href = "{% url 'contact' %}">Contact</a></li>
+                    {% if user.is_authenticated %}
+                        <li><a href = "{% url 'logoutPage' %}">Logout</a></li>
+                    {% else %}
+                        <li><a href = "{% url 'loginPage' %}">Login</a></li>
+                        <li><a href = "{% url 'register' %}">Register</a></li>
+                    {% endif %}
                 </ul>
             </nav>
         </div>
@@ -28,7 +33,18 @@
                     <h2 style = "font-family: 'pacifico'; float: left; margin-top: 30px; margin-left: 30px; color: darkslategray">Learning Django!</h2>
                     <h3 style = "font-family: Ubuntu; float: left; margin-top: 100px; margin-left: -160px">Welcome to my website!</h3>
                     <img style = "float: right; margin-top: 30px; margin-right: 100px;" src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQG0fBHmdf4VcnjxhZNCU1XazZg4Z5IsGa6g&usqp=CAU">
+                    
+                    {% if messages %}
+                        {% for message in messages %}
+                        <div id = "mess">
+                            {{ message }}
+                        </div>
+                        {% endfor %}
+                    {% endif %}
+                
                 </div>
+                
+
                 {% block content %}
 
                 {% endblock %}
@@ -43,6 +59,12 @@
 <style>
 body {
     background-color: white;
+}
+
+#mess {
+    float: left;
+    margin-left: -100px;
+    margin-top: 200px;
 }
 
 .NavigationPanel {
