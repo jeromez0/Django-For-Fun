@@ -16,3 +16,4 @@
 python3 manage.py runserver
 ```
 
+![screenshot](https://github.com/jeromez0/Django-QuickStart/blob/main/website-screenshot.png)
