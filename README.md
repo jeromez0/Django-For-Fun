@@ -4,9 +4,11 @@
 
 ### 1. git clone repo
 
-### 2. cd (repo name)/src/ 
+### 2. cd Django-QuickStart/DjangoApplication
 
 ### 3. run the following command in the terminal
 
- > python3 (main.py)
+```
+python3 manage.py runserver
+```
 
