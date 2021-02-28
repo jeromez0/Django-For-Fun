@@ -4,15 +4,15 @@
     <head>
         <meta charset = "utf-8">
         <meta name = "viewport" content = "width=device-width">
-        <title>Learning Django</title>
+        <title>Django For Fun</title>
     </head>
 
     <body>
 
         <div class = "NavigationPanel">
             <nav>
-                <ul>   
-                    <li id = "Logo">Learning Django</li>
+                <ul>
+                    <li id = "Logo">Django For Fun</li>
                     <li><a href = "{% url 'home' %}">Home Page</a></li>
                     <li><a href = "{% url 'To_Do' %}">To-Do App</a></li>
                     <li><a href = "{% url 'about' %}">About Us</a></li>
@@ -27,14 +27,14 @@
                 </ul>
             </nav>
         </div>
-        
+
         <div class = "MainBody">
             <div class = "InnerBody">
                 <div class = "header">
-                    <h2 style = "font-family: 'pacifico'; float: left; margin-top: 30px; margin-left: 30px; color: darkslategray">Learning Django!</h2>
+                    <h2 style = "font-family: 'pacifico'; float: left; margin-top: 30px; margin-left: 30px; color: darkslategray">Django For Fun</h2>
                     <h3 style = "font-family: Ubuntu; float: left; margin-top: 100px; margin-left: -160px">Welcome to my website!</h3>
                     <img style = "float: right; margin-top: 30px; margin-right: 100px;" src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQG0fBHmdf4VcnjxhZNCU1XazZg4Z5IsGa6g&usqp=CAU">
-                    
+
                     {% if messages %}
                         {% for message in messages %}
                         <div id = "mess">
@@ -42,15 +42,15 @@
                         </div>
                         {% endfor %}
                     {% endif %}
-                
+
                 </div>
-                
+
 
                 {% block content %}
 
                 {% endblock %}
 
-            </div>        
+            </div>
         </div>
 
     </body>
@@ -70,8 +70,8 @@ body {
 
 .NavigationPanel {
     top: 0;
-    width: 105%;  
-    left: -20px;  
+    width: 105%;
+    left: -20px;
     height: 8%;
     background-color: forestgreen;
     margin-left: auto;
@@ -95,7 +95,7 @@ body {
     float: left;
     display: block;
     padding: 14px 16px;
-    font-family: Ubuntu;    
+    font-family: Ubuntu;
     color: white;
 }
 
@@ -144,7 +144,7 @@ body {
 .header {
     height: 250px;
     width: 100%;
-    border-style: solid;
+    border-bottom-style: solid;
 }
 
 </style>
