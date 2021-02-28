@@ -4,7 +4,7 @@
 
 ### 1. git clone repo
 
-### 2. cd Django-Quickstart and create and source a virtual environment
+### 2. cd Django-For-Fun and create and source a virtual environment
 
 ### 3. pip3 install -r requirements.txt
 
