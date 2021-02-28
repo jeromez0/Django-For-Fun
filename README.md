@@ -4,9 +4,13 @@
 
 ### 1. git clone repo
 
-### 2. cd Django-QuickStart/DjangoApplication
+### 2. cd Django-Quickstart and create and source a virtual environment
 
-### 3. run the following command in the terminal
+### 3. pip3 install -r requirements.txt
+
+### 4. cd Django-QuickStart/DjangoApplication
+
+### 5. run the following command in the terminal
 
 ```
 python3 manage.py runserver
